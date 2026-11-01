@@ -1,0 +1,73 @@
+owner: sondresjolyst
+# discovery_mode: team
+# teams:
+#   - my-org/platform-team
+templates_dir: templates
+workflows_dir: workflows
+
+language_threshold: 0.10
+include_archived: false
+include_forks: false
+
+branch_name: parity/sync-standards
+
+dependency_manager: renovate
+renovate_preset: github>sondresjolyst/si-renovate-config
+renovate_remove_codeowners: true
+
+workflows:
+  dependency-review.yml:
+    languages: [all]
+    visibility: public   # dependency-review needs a public repo / GHAS
+  dependabot-title.yml:
+    languages: [all]
+    manager: dependabot
+  release-review.yml:
+    languages: [all]
+    manager: renovate
+    exclude:             # no release workflow in these repos
+      - AHK-Media-Keys
+      - Fast-Color-Picking
+      - Foza-backend
+      - Foza-frontend
+      - Mineclicker
+      - cnc-surface-plot
+      - discord-bot
+      - garge-pcb
+      - icon-replacer
+      - kubernetes-bare-metal
+      - kubernetes-minikube
+      - liz
+      - personal-modelling-projects
+      - si-linuxcnc
+      - si-parity-config
+      - si-renovate-config
+      - sondresjolyst
+      - sonyslyst.github.io
+      - tumo-flux
+      - tumo-platform
+
+settings:
+  delete_branch_on_merge: true
+  squash_merge_commit_title: PR_TITLE
+  squash_merge_commit_message: PR_BODY
+  has_wiki: false
+  allow_update_branch: true
+  actions_default_workflow_permissions: read
+  actions_can_approve_pull_request_reviews: true
+  dependabot_alerts: true
+  dependabot_security_updates: true
+
+vars:
+  owner: "@sondresjolyst"
+  release_reviewers: sondresjolyst   # comma separated users or org/team slugs
+
+# repo_vars:           # per-repo overrides of vars
+#   my-repo:
+#     release_reviewers: someone,my-org/my-team
+
+# repos_include: []   # only these repos (empty = all)
+# repos_exclude: []   # skip these repos
+
+# language_map:       # override GitHub language -> template dir
+#   TypeScript: node
