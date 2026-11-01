@@ -70,7 +70,7 @@ wheels = [
 [[package]]
 name = "parity-cli"
 version = "0.8.1"
-source = { git = "https://github.com/sondresjolyst/parity-cli?branch=main#30271e3d6a16cd6e14b85fc5161675d605143df1" }
+source = { git = "https://github.com/sondresjolyst/parity-cli?branch=main#ea4342c8dc8218543053bd761a7d0d3473dd355d" }
 dependencies = [
     { name = "pyyaml" },
     { name = "rich" },
