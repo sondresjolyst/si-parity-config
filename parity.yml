@@ -25,6 +25,27 @@ workflows:
   release-review.yml:
     languages: [all]
     manager: renovate
+    exclude:             # no release workflow in these repos
+      - AHK-Media-Keys
+      - Fast-Color-Picking
+      - Foza-backend
+      - Foza-frontend
+      - Mineclicker
+      - cnc-surface-plot
+      - discord-bot
+      - garge-pcb
+      - icon-replacer
+      - kubernetes-bare-metal
+      - kubernetes-minikube
+      - liz
+      - personal-modelling-projects
+      - si-linuxcnc
+      - si-parity-config
+      - si-renovate-config
+      - sondresjolyst
+      - sonyslyst.github.io
+      - tumo-flux
+      - tumo-platform
 
 settings:
   delete_branch_on_merge: true
