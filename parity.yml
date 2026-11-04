@@ -25,7 +25,7 @@ workflows:
   release-review.yml:
     languages: [all]
     manager: renovate
-    exclude:             # no release workflow in these repos
+    exclude:             # no release PRs in these repos
       - AHK-Media-Keys
       - Fast-Color-Picking
       - Foza-backend
@@ -33,6 +33,7 @@ workflows:
       - Mineclicker
       - cnc-surface-plot
       - discord-bot
+      - garge
       - garge-pcb
       - icon-replacer
       - kubernetes-bare-metal
@@ -46,6 +47,7 @@ workflows:
       - sonyslyst.github.io
       - tumo-flux
       - tumo-platform
+      - tumogroup-charts
 
 settings:
   delete_branch_on_merge: true
